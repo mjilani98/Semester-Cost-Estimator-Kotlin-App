@@ -1,19 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dusty_mint"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="wrap_content"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--App name text-->
+        <TextView
+            android:id="@+id/lblAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:textColor="@color/black"
+            android:text="~Tuition Calculator~"
+            />
+
+
+        <!--Number of credits-->
+
+        <TextView
+            android:id="@+id/lblNumberCredit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/lblAppName"
+            android:text="Number of credit "
+            android:textSize="@dimen/textSize"
+            android:textColor="@color/amber"
+            android:textAlignment="center"
+            android:background="@color/peacock_blue"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/inputNumCredit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblNumberCredit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:hint="#credit"
+            android:textSize="@dimen/textSize"
+            android:background="@color/mint_green"
+            android:textAlignment="center"
+            android:inputType="number"
+            />
+
+        <!--Academic status-->
+
+        <TextView
+            android:id="@+id/lblAcademicStatus"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/inputNumCredit"
+            android:layout_centerHorizontal="true"
+            android:text="Academic status "
+            android:textSize="@dimen/textSize"
+            android:textColor="@color/amber"
+            android:textAlignment="center"
+            android:background="@color/peacock_blue"
+            />
+
+        <!--Academic status radio group-->
+        <RadioGroup
+            android:id="@+id/academicStatusRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblAcademicStatus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@color/mint_green"
+            >
+
+
+            <RadioButton
+                android:id="@+id/radioBtnUnderGraduate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblAcademicStatus"
+                android:layout_centerHorizontal="true"
+                android:text="Undergraduate"
+                android:textSize="@dimen/radioTextSize"
+                android:checked="true"
+                />
+
+            <RadioButton
+                android:id="@+id/radioBtnGraduate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radioBtnUnderGraduate"
+                android:layout_centerHorizontal="true"
+                android:text="Graduate"
+                android:textSize="@dimen/radioTextSize"
+                />
+
+            <RadioButton
+                android:id="@+id/radioBtnNonDegree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Non degree"
+                android:textSize="@dimen/radioTextSize"
+
+                />
+
+        </RadioGroup>
+
+        <!--State status-->
+        <TextView
+            android:id="@+id/lblStateStatus"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/academicStatusRadioGroup"
+            android:layout_centerHorizontal="true"
+            android:text="State status "
+            android:textSize="@dimen/textSize"
+            android:textColor="@color/amber"
+            android:textAlignment="center"
+            android:background="@color/peacock_blue"
+            />
+
+        <!--State status radio group-->
+        <RadioGroup
+            android:id="@+id/stateStatusRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblStateStatus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@color/mint_green"
+            >
+
+            <RadioButton
+                android:id="@+id/radioBtnInState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In state"
+                android:textSize="@dimen/radioTextSize"
+                android:checked="true"
+                />
+
+            <RadioButton
+                android:id="@+id/radioBtnOutState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Out of state"
+                android:textSize="@dimen/radioTextSize"
+                />
+
+        </RadioGroup>
+
+        <!--dormitory/dining/parking cehck boxes-->
+
+        <TextView
+            android:id="@+id/lblOptional"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/stateStatusRadioGroup"
+            android:layout_centerHorizontal="true"
+            android:text="Optional"
+            android:textSize="@dimen/textSize"
+            android:textColor="@color/amber"
+            android:textAlignment="center"
+            android:background="@color/peacock_blue"
+            />
+
+        <!--Dormitory-->
+        <CheckBox
+            android:id="@+id/chkBoxDromitory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblOptional"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:text="Dromitory"
+            android:textSize="@dimen/checkBoxTextSize"
+            android:background="@color/mint_green"
+            />
+
+        <!--Parking-->
+        <CheckBox
+            android:id="@+id/chkBoxParking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chkBoxDromitory"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:text="Parking"
+            android:textSize="@dimen/checkBoxTextSize"
+            android:background="@color/mint_green"
+            />
+
+
+        <!--Dining-->
+        <CheckBox
+            android:id="@+id/chkBoxDining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chkBoxParking"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:text="Dining"
+            android:textSize="@dimen/checkBoxTextSize"
+            android:background="@color/mint_green"
+            />
+
+        <!--Total cost-->
+        <TextView
+            android:id="@+id/lblTotalCost"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/chkBoxDining"
+            android:layout_centerHorizontal="true"
+            android:text="Total cost"
+            android:textSize="@dimen/textSize"
+            android:textColor="@color/charcoal_gray"
+            android:textAlignment="center"
+            android:background="@color/ivory"
+            />
+
+        <TextView
+            android:id="@+id/txtViewCost"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/lblTotalCost"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/textSize"
+            android:textColor="@color/charcoal_gray"
+            android:textAlignment="center"
+            android:background="@color/peach"
+            android:hint="$ 0.0"
+            />
+
+        <!--Calculate buttom-->
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtViewCost"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/textSize"
+            android:layout_marginTop="50dp"
+            android:text="Calculate"
+            android:textColor="@color/rich_burgundy"
+            android:backgroundTint="@color/amber"
+            android:onClick="calculate"
+            />
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
+
+
+
+
+
+
+
+
+
+

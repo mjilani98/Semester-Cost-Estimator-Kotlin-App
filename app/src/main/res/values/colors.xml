@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="amber">#FFBF00</color>
+    <color name="rich_burgundy">#800020</color>
+    <color name="peach">#FFBC94</color>
+    <color name="ivory">#FFFFF0</color>
+    <color name="mint_green">#A8D5BA</color>
+    <color name="peacock_blue">#006F82</color>
+    <color name="dusty_mint">#A8D8D8</color>
+    <color name="charcoal_gray">#333333</color>
 </resources>
